@@ -44,7 +44,7 @@ case "$1" in
       "Mist"|"Fog") printf '' ;;
       "Partlycloudy") printf '' ;;
       "Overcast") printf '' ;;
-      "Sunny") printf '盛' ;;
+      "Sunny"|"Clear") printf '盛' ;;
       "LightRain"|"LightDrizzleMist"|"Patchyrainpossible") printf '' ;;
       "HeavyRain") printf '' ;;
     esac
