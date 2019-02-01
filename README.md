@@ -18,7 +18,7 @@ state=$(pkcon get-updates | grep "There are no")
 
 case $state in
   "") printf "﮻"  ;;
-  "*") printf "" ;;
+  *) printf "" ;;
 esac
 
 ```
