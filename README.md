@@ -26,6 +26,8 @@ esac
 
 ## Weather (wttr.in)
 
+Thanks to Luke Smith for the ![temp code](https://github.com/LukeSmithxyz/voidrice/blob/master/.scripts/statusbar/weather).
+
 Command: `echo $(/home/raitaro/bin/weather -t)` for temperature and `-c` for the cast, every 180000ms, with a Nerd Font.
 
 ```
