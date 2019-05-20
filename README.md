@@ -41,15 +41,15 @@ case "$1" in
   -c|cast)
     state=$(curl wttr.in -s | sed -n 3p | sed -e "s/[^ a-zA-Z']//g" -e 's/ \+/ /' -e 's/\ //g' -e 's/mmm//g' -e 's/mm//g')
     # echo $state
+    [[ $state == *Fog*      || $state == *Mist* ]]     && printf ''  && exit 1
+    [[ $state == *Sun*      || $state == *Clear* ]]    && printf '盛' && exit 1
+    [[ $state == *Freezing* || $state == *SnowMist* ]] && printf 'ﭽ'  && exit 1
+    [[ $state == *Rain*     || $state == *Drizzle* ]]  && printf ''  && exit 1
+    [[ $state == *torm* ]] && printf '' && exit 1
+    [[ $state == *loud* ]] && printf '' && exit 1
+    [[ $state == *cast* ]] && printf '' && exit 1
+    [[ $state == *Snow* ]] && printf '' && exit 1
 
-    case $state in
-      "Mist"|"Fog") printf '' ;;
-      "Partlycloudy") printf '' ;;
-      "Overcast") printf '' ;;
-      "Sunny"|"Clear") printf '盛' ;;
-      "LightRain"|"LightDrizzleMist"|"Patchyrainpossible") printf '' ;;
-      "HeavyRain") printf '' ;;
-    esac
     ;;
     -t|temperature)
       # curl wttr.in -s | sed '13q;d' | grep -o "m\\(-\\)*[0-9]\\+" | sort -n -t 'm' -k 2n | sed -e 1b -e '$!d' | tr '\n|m' ' ' | awk '{print "",$1 "°C","",$2 "°C"}'
